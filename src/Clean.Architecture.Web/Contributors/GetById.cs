@@ -36,7 +36,8 @@ public class GetById(IMediator _mediator)
 
     if (result.IsSuccess)
     {
-      Response = new ContributorRecord(result.Value.Id, result.Value.Name);
+      var contributor = result.Value;
+      Response = new ContributorRecord(contributor.Id, contributor.FirstName, contributor.LastName);
     }
   }
 }
